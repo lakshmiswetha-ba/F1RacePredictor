@@ -98,12 +98,6 @@ Applied **k-fold cross-validation** and **grid search** to tune hyperparameters 
 
 ---
 
-## ⚖️ License
-
-This project is licensed under the **MIT License**.
-
----
-
-## 🔑 Keywords
+## Keywords
 
 Formula One, F1 ML, podium prediction, motorsport analytics, driver performance, constructor performance, machine learning, classification, race prediction, FastF1, telemetry, tyre strategy, grid position, pit stop analysis, model interpretability, data visualization, EDA, feature engineering, sports data science.
