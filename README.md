@@ -61,9 +61,10 @@ These findings align with real-world F1 race logic.
 
 ## Predicted vs Actual Podium
 
-This section visualizes how the model's predicted top 3 drivers compare to the actual podium finishers across multiple races. It helps assess where the model was accurate and where it needs improvement.
+This chart compares the model's predicted top 3 drivers to the actual podium finishers across multiple races.
 
-**Visual Output:** `visuals/predicted_vs_actual_podium.png`
+[![Predicted vs Actual Podium](visuals/predicted_vs_actual_podium.png)](visuals/predicted_vs_actual_podium.png)
+
 
 ---
 
@@ -81,17 +82,13 @@ cd F1RacePredictor
 pip install -r requirements.txt
 ```
 
-**3. Run EDA Notebook**
-```bash
-jupyter notebook notebooks/eda.ipynb
-```
 
-**4. Train the Model**
+**3. Train the Model**
 ```bash
 python src/train_model.py
 ```
 
-**5. View Outputs**
+**4. View Outputs**
 - Predictions: `outputs/predictions.csv`  
 - Visualizations: `visuals/`
 
@@ -101,8 +98,8 @@ python src/train_model.py
 
 - **Python**
 - **pandas**, **scikit-learn**, **matplotlib**, **XGBoost**
-- **FastF1 API** for F1 data access
-- **Jupyter Notebooks** and modular Python scripts
+- **FastF1 API** 
+- **VS Code, Git, GitHub** 
 
 ---
 
@@ -123,7 +120,7 @@ python src/train_model.py
 
 ---
 
-## Developed By
+## Crafted By
 
 **Lakshmi Swetha Bathula**  
 [GitHub](https://github.com/lakshmiswetha-ba)  
