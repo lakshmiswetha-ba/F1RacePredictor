@@ -94,7 +94,7 @@ Applied **k-fold cross-validation** and **grid search** to tune hyperparameters 
 
 - **Lakshmi Swetha Bathula**
   Data Scientist | ML Enthusiast | F1 Fan  
-  [LinkedIn](https://linkedin.com/in/your-profile) 
+  [LinkedIn](https://www.linkedin.com/in/swethal-bathulaaa/) 
 
 ---
 
