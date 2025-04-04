@@ -1,133 +1,144 @@
 # 🏎️ Predicting Formula 1 Podium Finishers using Machine Learning
 
 
-Project Motivation
 
-I’ve always been fascinated by how much strategy and data go into a Formula 1 race. It’s not just about speed — it’s about timing, precision, and decisions made in milliseconds. As a F1 🏎️ fan, I wanted to see if machine learning could make sense of all that complexity.
+## Project Motivation
 
-This project is a way to explore how data can tell the story of a race — and maybe even predict the outcome before the lights go out.
+I’ve always been fascinated by how much strategy and data go into a Formula 1 race. It’s not just about speed — it’s about timing, precision, and decisions made in milliseconds. As an F1 🏎️ fan, I wanted to see if machine learning could make sense of all that complexity.
 
-Project Summary
+This project explores how structured race data can help us understand and predict race outcomes — possibly even before the race begins.
 
-This project develops a machine learning pipeline to predict the Top 3 finishers (podium positions) in Formula 1 races using real-time and historical data from the FastF1 API. It features data extraction, preprocessing, feature engineering, model training (Random Forest, XGBoost), and performance evaluation through visual and quantitative methods.
+---
 
-Problem Statement
+## Project Summary
 
-Formula 1 outcomes are influenced by multiple variables: driver skill, team strength, qualifying results, tyre strategy, and track conditions. The question is:
+This project builds a machine learning pipeline to **predict the Top 3 finishers (podium positions)** in Formula 1 races using **real-time and historical data** from the **FastF1 API**. It includes **data collection, preprocessing, feature engineering, model training**, and **evaluation** using both metrics and visualizations.
 
-Can we use machine learning to accurately predict the top 3 finishers in a race using structured race data?
+---
 
-Approach
+## Problem Statement
 
-Data Extraction via FastF1 API
+Formula 1 outcomes depend on many variables: **driver skill, team performance, qualifying results, tyre strategy**, and **track conditions**.
 
-Feature Engineering: qualifying position, tyre compound, constructor stats, lap time averages
+**Can we use machine learning to accurately predict the top 3 finishers in a race using structured race data?**
 
-Modeling: Logistic Regression, Random Forest, XGBoost
+---
 
-Evaluation: accuracy, podium hit rate, visual validation
+## Approach
 
-Visualization: predicted vs actual podium, feature importance
+- **Data Extraction** from FastF1 API  
+- **Feature Engineering**: qualifying position, tyre compound, constructor points, average lap times  
+- **Modeling**: Logistic Regression, Random Forest, XGBoost  
+- **Evaluation**: accuracy score, podium hit rate, confusion matrix  
+- **Visualization**: feature importance and predicted vs actual podium comparison  
 
-Key Results
+---
 
-Random Forest achieved ~65% accuracy in predicting podium finishes
+## Key Results
 
-Most influential features:
+- **Random Forest** achieved approximately **65% accuracy** in predicting podium finishes  
+- **Top features** influencing predictions:
+  - **Qualifying Position**
+  - **Constructor Points**
+  - **Tyre Strategy**
+- Visualizations helped highlight the strengths and weaknesses of the model  
 
-Qualifying Position
+---
 
-Constructor Points
+## Feature Importance
 
-Tyre Strategy
+To understand the model’s behavior, we analyzed feature importance scores using Random Forest.  
 
-Visual comparisons helped validate model strengths and failure cases
+- **Qualifying Position** had the most impact — better grid positions often lead to better race finishes.  
+- **Constructor Points** indicate team performance and reliability.  
+- **Tyre Strategy** affects race pace and consistency.  
 
-Feature Importance
+These findings align with real-world F1 race logic.
 
-To understand how the model makes predictions, we analyzed feature importance scores from the Random Forest model:
+**Visual Output:** `visuals/feature_importance.png`
 
-Qualifying Position had the highest impact — better grid starts significantly correlate with podium finishes.
+---
 
-Constructor Points reflect overall team reliability and performance.
+## Predicted vs Actual Podium
 
-Tyre Strategy influenced pace and consistency throughout the race.
+This section visualizes how the model's predicted top 3 drivers compare to the actual podium finishers across multiple races. It helps assess where the model was accurate and where it needs improvement.
 
-These results align with domain knowledge and improve model interpretability.
+**Visual Output:** `visuals/predicted_vs_actual_podium.png`
 
+---
 
+## How to Run
 
-Predicted vs Actual Podium
-
-
-
-📃 This comparison illustrates how closely model predictions match real race results. It helps identify races where predictions were accurate and where they diverged.
-
-How to Run
-
-1. Clone the Repository
-
+**1. Clone the Repository**
+```bash
 git clone https://github.com/lakshmiswetha-ba/F1RacePredictor.git
 cd F1RacePredictor
 
-2. Install Dependencies
 
+
+**2. Install Dependencies**
+```bash
 pip install -r requirements.txt
+```
 
-3. Run EDA Notebook
-
+**3. Run EDA Notebook**
+```bash
 jupyter notebook notebooks/eda.ipynb
+```
 
-Explore, clean, and prepare the data.
-
-4. Train the Model
-
+**4. Train the Model**
+```bash
 python src/train_model.py
+```
 
-This will load the data, train the model, and generate predictions.
+**5. View Outputs**
+- Predictions: `outputs/predictions.csv`  
+- Visualizations: `visuals/`
 
-5. Review Outputs
+---
 
-Predictions: outputs/predictions.csv
+## Tech Stack
 
-Visualizations: visuals/
+- **Python**
+- **pandas**, **scikit-learn**, **matplotlib**, **XGBoost**
+- **FastF1 API** for F1 data access
+- **Jupyter Notebooks** and modular Python scripts
 
-🛠 Tech Stack
+---
 
-Languages & Libraries: Python, pandas, scikit-learn, matplotlib, XGBoost
+## Features
 
-Data Source: FastF1 API
+- Predicts **Top 3 podium finishers** using ML
+- Analyzes **feature importance**
+- Visualizes **predicted vs actual podium**
+- Clean and modular codebase for easy extension
 
-Development: Jupyter Notebooks, Python scripts
+---
 
-Features
+## Future Enhancements
 
-Predicts Top 3 drivers for F1 races
+- Expand dataset with more race seasons
+- Build a **Streamlit or Flask web app** for interaction
+- Add features like **weather, pit strategy**, and **telemetry data**
 
-Visual insights: feature importance, predicted vs actual podiums
+---
 
-Modular and extensible pipeline for experimentation
+## Developed By
 
-Future Enhancements
+**Lakshmi Swetha Bathula**  
+[GitHub](https://github.com/lakshmiswetha-ba)  
+[LinkedIn](https://www.linkedin.com/in/lakshmiswetha)
 
-Include more historical data to improve generalization
+---
 
-Deploy as a Streamlit or Flask app for live predictions
+## What I Learned
 
-Integrate additional features: pit stop strategy, weather, driver telemetry
+- Built a complete ML workflow on real-world data  
+- Explored F1 strategy and driver performance using data  
+- Gained experience with model interpretability and visualization  
+- Practiced technical storytelling through project documentation
 
-Developed By
+---
 
-Lakshmi Swetha BGitHub | LinkedIn
-
-What I Learned
-
-Built a complete ML pipeline using real-world sports data
-
-Explored race strategy through the lens of feature importance
-
-Practiced model evaluation and storytelling for technical projects
-
-Strengthened skills in data interpretation, visualization, and documentation
-
-This project is open to collaboration and feedback. Feel free to fork, suggest improvements, or connect!
+This project is open to feedback.  
+Feel free to fork it, raise issues, or connect!
