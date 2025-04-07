@@ -1,16 +1,16 @@
-# 🏎️ Predicting Formula 1 Podium Finishers using Machine Learning
+# 🏎️ F1 Race Predictor - Predicting the Top 3 Finishers with Machine Learning
+
+This project aims to **predict the top 3 podium finishers** in Formula 1 races using machine learning and historical race data from the [FastF1 API](https://theoehrly.github.io/Fast-F1/). 
+
+It includes:
+- Data collection from F1 sessions
+- Feature engineering from lap and race metrics
+- Training models (Logistic Regression, Random Forest, XGBoost)
+- Evaluating predictions and visualizing outcomes
 
 
 
-## Project Motivation
-
-I’ve always been fascinated by how much strategy and data go into a Formula 1 race. It’s not just about speed — it’s about timing, precision, and decisions made in milliseconds. As an F1 🏎️ fan, I wanted to see if machine learning could make sense of all that complexity.
-
-This project explores how structured race data can help us understand and predict race outcomes — possibly even before the race begins.
-
----
-
-## Project Summary
+## Project Overview
 
 This project builds a machine learning pipeline to predict the Top 3 finishers (podium positions) in Formula 1 races using real-time and historical data from the FastF1 API. It includes data collection, preprocessing, feature engineering, model training, and evaluation using both metrics and visualizations.
 
@@ -23,6 +23,32 @@ Formula 1 outcomes depend on many variables: driver skill, team performance, qua
 Can we use machine learning to accurately predict the top 3 finishers in a race using structured race data?
 
 ---
+
+## Data Description & Preparation
+
+The data used in this project is sourced from the **[FastF1 API](https://theoehrly.github.io/Fast-F1/)**, which provides detailed telemetry and timing data for every Formula 1 session.
+
+## Data Includes:
+- Driver name, team, car number
+- Lap times, sector times
+- Qualifying position
+- Pit stops and stint data
+- Weather and track status
+- Final race position
+
+## Preprocessing Steps:
+- Loaded qualifying and race data for each selected Grand Prix
+- Removed drivers who did not complete the race or had incomplete lap data
+- Converted lap times and speeds into numerical features
+- Merged session data into a combined dataset per race
+
+## Engineered Features:
+- `position_gain`: difference between starting and finishing position
+- `avg_lap_time`: average lap time for each driver
+- `pit_stop_count`: number of pit stops
+- `qualifying_position`: grid start position
+- `laps_completed`: number of laps completed
+- `stint_length`: average stint duration between pit stops
 
 ## Approach
 
