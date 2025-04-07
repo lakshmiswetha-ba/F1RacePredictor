@@ -12,15 +12,15 @@ This project explores how structured race data can help us understand and predic
 
 ## Project Summary
 
-This project builds a machine learning pipeline to **predict the Top 3 finishers (podium positions)** in Formula 1 races using **real-time and historical data** from the **FastF1 API**. It includes **data collection, preprocessing, feature engineering, model training**, and **evaluation** using both metrics and visualizations.
+This project builds a machine learning pipeline to predict the Top 3 finishers (podium positions) in Formula 1 races using real-time and historical data from the FastF1 API. It includes data collection, preprocessing, feature engineering, model training, and evaluation using both metrics and visualizations.
 
 ---
 
 ## Problem Statement
 
-Formula 1 outcomes depend on many variables: **driver skill, team performance, qualifying results, tyre strategy**, and **track conditions**.
+Formula 1 outcomes depend on many variables: driver skill, team performance, qualifying results, tyre strategy, and track conditions.
 
-**Can we use machine learning to accurately predict the top 3 finishers in a race using structured race data?**
+Can we use machine learning to accurately predict the top 3 finishers in a race using structured race data?
 
 ---
 
@@ -49,9 +49,9 @@ Formula 1 outcomes depend on many variables: **driver skill, team performance, q
 
 To understand the model’s behavior, we analyzed feature importance scores using Random Forest.  
 
-- **Qualifying Position** had the most impact — better grid positions often lead to better race finishes.  
-- **Constructor Points** indicate team performance and reliability.  
-- **Tyre Strategy** affects race pace and consistency.  
+- Qualifying Position had the most impact — better grid positions often lead to better race finishes.  
+- Constructor Points indicate team performance and reliability.  
+- Tyre Strategy affects race pace and consistency.  
 
 These findings align with real-world F1 race logic.
 
@@ -105,9 +105,9 @@ python src/train_model.py
 
 ## Features
 
-- Predicts **Top 3 podium finishers** using ML
-- Analyzes **feature importance**
-- Visualizes **predicted vs actual podium**
+- Predicts Top 3 podium finishers using ML
+- Analyzes feature importance
+- Visualizes predicted vs actual podium
 - Clean and modular codebase for easy extension
 
 ---
@@ -115,8 +115,8 @@ python src/train_model.py
 ## Future Enhancements
 
 - Expand dataset with more race seasons
-- Build a **Streamlit or Flask web app** for interaction
-- Add features like **weather, pit strategy**, and **telemetry data**
+- Build a Streamlit or Flask web app for interaction
+- Add features like weather, pit strategy, and telemetry data
 
 ---
 

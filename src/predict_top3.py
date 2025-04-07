@@ -1,60 +1,76 @@
 import pandas as pd
 import joblib
 import matplotlib.pyplot as plt
-import numpy as np
+import os
 
-# Load the data
-df = pd.read_csv("data/features_enhanced_final.csv")
+# Basic color map for F1 teams
+TEAM_COLORS = {
+    "Red Bull Racing": "blue",
+    "Ferrari": "red",
+    "Mercedes": "silver",
+    "McLaren": "orange",
+    "Aston Martin": "green",
+    "Alpine": "purple",
+    "AlphaTauri": "navy",
+    "Alfa Romeo": "maroon",
+    "Williams": "royalblue",
+    "Haas F1 Team": "black"
+}
 
-# Load the trained model
-model = joblib.load("models/lap_time_model.pkl")
+def predict_and_plot_top3(input_csv, model_file, output_plot):
+    # Load the feature data
+    df = pd.read_csv(input_csv)
 
-# Separate features and target
-X = df.drop(columns=["AvgLapTime"])
-y_true = df["AvgLapTime"]
+    # Keep driver and team info before dropping columns
+    info_cols = df[["DriverNumber"]].copy()
+    if "Driver" in df.columns and "Team" in df.columns:
+        info_cols["Driver"] = df["Driver"]
+        info_cols["Team"] = df["Team"]
 
-# Predict lap times
-y_pred = model.predict(X)
-df["PredictedLapTime"] = y_pred
+    # Drop non-feature columns before prediction
+    X = df.drop(columns=["AvgLapTime", "Driver", "Team"], errors="ignore")
 
-# Get top 3 predicted drivers with lowest predicted lap time
-top3_predicted = df.sort_values("PredictedLapTime").head(3)["DriverNumber"].tolist()
-print("Top 3 Predicted Driver Numbers:", top3_predicted)
+    # Load the trained model
+    model = joblib.load(model_file)
 
-# Get actual top 3 drivers with lowest actual lap time
-top3_actual = df.sort_values("AvgLapTime").head(3)["DriverNumber"].tolist()
-print("Top 3 Actual Driver Numbers:", top3_actual)
+    # Predict lap times
+    df["PredictedLapTime"] = model.predict(X)
 
-# Create bar chart comparing predicted vs actual lap times
-plt.figure(figsize=(8, 5))
-labels = ["1st", "2nd", "3rd"]
+    # Add driver and team info back
+    if "Driver" in info_cols.columns:
+        df = pd.concat([df, info_cols[["Driver", "Team"]]], axis=1)
 
-# ----------------------------------------------
-# Feature Importance Chart (if model supports it)
-# ----------------------------------------------
-trained_model = model.named_steps["model"]      
+    # Get top 3 drivers with lowest predicted lap times
+    top3 = df.sort_values(by="PredictedLapTime").head(3).copy()
 
-if hasattr(trained_model, "feature_importances_"):
-    preprocessor = model.named_steps["pre"]
-    categorical_feature_names = preprocessor.named_transformers_["cat"].get_feature_names_out()
-    numerical_feature_names = preprocessor.transformers_[0][2]
-    feature_names = np.concatenate([numerical_feature_names, categorical_feature_names])
-    importance_scores = trained_model.feature_importances_
-    if len(feature_names) == len(importance_scores):
-        importance_df = pd.DataFrame({
-            "Feature": feature_names,
-            "Importance": importance_scores
-        }).sort_values(by="Importance", ascending=False)
+    # Print top 3 to console
+    print("Top 3 Predicted Drivers:")
+    print(top3[["Driver", "Team", "PredictedLapTime"]])
 
-        plt.figure(figsize=(10, 6))
-        plt.barh(importance_df["Feature"], importance_df["Importance"])
-        plt.xlabel("Importance")
-        plt.title("Feature Importance from Trained Model")
-        plt.tight_layout()
-        plt.savefig("visuals/feature_importance.png")
-        print("Feature importance chart saved to visuals/feature_importance.png")
-        plt.show()
-    else:
-        print("Feature count doesn't match importance values. Skipping the plot.")
-else:
-    print("This model does not support feature importance.")
+    # Build labels like "Max Verstappen (Red Bull Racing)"
+    top3["Label"] = top3.apply(lambda row: f"{row['Driver']} ({row['Team']})", axis=1)
+
+    # Get bar colors by team
+    top3["Color"] = top3["Team"].map(TEAM_COLORS).fillna("gray")
+
+    # Plot the results
+    plt.figure(figsize=(10, 6))
+    plt.bar(top3["Label"], top3["PredictedLapTime"], color=top3["Color"])
+    plt.xlabel("Driver (Team)")
+    plt.ylabel("Predicted Avg Lap Time")
+    plt.title("Top 3 Predicted Fastest Drivers")
+    plt.xticks(rotation=10)
+    plt.tight_layout()
+
+    # Save the plot
+    os.makedirs(os.path.dirname(output_plot), exist_ok=True)
+    plt.savefig(output_plot)
+    print(f"Plot saved to: {output_plot}")
+    plt.show()
+
+if __name__ == "__main__":
+    predict_and_plot_top3(
+        input_csv="data/features_enhanced_final.csv",
+        model_file="models/lap_time_model.pkl",
+        output_plot="visuals/top3_predicted.png"
+    )
