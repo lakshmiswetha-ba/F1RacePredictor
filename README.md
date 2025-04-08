@@ -1,4 +1,4 @@
-# 🏎️ F1 Race Predictor - Predicting the Top 3 Finishers with Machine Learning
+# 🏎️ F1 Race Podium & Position Predictor
 
 This project aims to **predict the top 3 podium finishers** in Formula 1 races using machine learning and historical race data from the [FastF1 API](https://theoehrly.github.io/Fast-F1/). 
 

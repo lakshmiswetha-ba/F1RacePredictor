@@ -1,0 +1,21 @@
+DriverNumber,Driver,Team,RacePosition,PredictedPosition
+16,Charles Leclerc,Ferrari,4.0,6.0
+11,Sergio Perez,Red Bull Racing,2.0,6.0
+44,Lewis Hamilton,Mercedes,6.0,7.0
+55,Carlos Sainz,Ferrari,3.0,7.0
+23,Alexander Albon,Williams,7.0,9.0
+4,Lando Norris,McLaren,8.0,10.0
+14,Fernando Alonso,Aston Martin,9.0,11.0
+2,Logan Sargeant,Williams,13.0,11.0
+77,Valtteri Bottas,Alfa Romeo,10.0,11.0
+1,Max Verstappen,Red Bull Racing,1.0,11.0
+40,Liam Lawson,AlphaTauri,11.0,12.0
+24,Guanyu Zhou,Alfa Romeo,14.0,12.0
+63,George Russell,Mercedes,5.0,12.0
+81,Oscar Piastri,McLaren,12.0,13.0
+10,Pierre Gasly,Alpine,15.0,13.0
+27,Nico Hulkenberg,Haas F1 Team,17.0,15.0
+20,Kevin Magnussen,Haas F1 Team,18.0,15.0
+18,Lance Stroll,Aston Martin,16.0,16.0
+31,Esteban Ocon,Alpine,19.0,17.0
+22,,,20.0,18.0
