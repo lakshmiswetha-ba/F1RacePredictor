@@ -43,23 +43,25 @@ To build a machine learning model that can predict each driver's finishing posit
 **Final MAE on test data:** ~4.92 positions
 
 
-
-
-### Visualizations
+## Visualizations
 
 ### Predicted vs Actual Race Positions
 
 This bar chart compares each driver's predicted finishing position (from the model) to their actual finishing position in the race.
 
+  
 ![Race Position Comparison](visuals/position_barchart.png)
+
 
 ---
 
-###  Feature Importance
+### Feature Importance
 
 This chart shows which features had the most influence on the race position prediction model.
 
+  
 ![Feature Importance](visuals/feature_importance.png)
+
 
 
 ## Folder Structure
