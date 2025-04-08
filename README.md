@@ -39,8 +39,8 @@ To build a machine learning model that can predict each driver's finishing posit
 - **Target Variable**: RacePosition (1 = 1st place)
 - **Metric Used**: Mean Absolute Error (MAE)
 
-```text
-Final MAE on test data: ~4.92 positions
+```markdown
+**Final MAE on test data:** ~4.92 positions
 
 
 
