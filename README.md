@@ -45,17 +45,18 @@ To build a machine learning model that can predict each driver's finishing posit
 
 ### Predicted vs Actual Race Positions
 
-This bar chart compares each driver's predicted finishing position (from the model) to their actual finishing position in the race.
+This bar chart compares predicted and actual race positions of drivers.
 
-![Race Position Comparison](visuals/position_barchart.png)
+[View Race Position Comparison Chart](visuals/position_barchart.png)
 
 ---
 
 ### Feature Importance
 
-This chart shows which features had the most influence on the race position prediction model.
+This chart highlights the most important features used by the model for predicting race positions.
 
-![Feature Importance](visuals/feature_importance.png)
+[View Feature Importance Chart](visuals/feature_importance.png)
+
 
 ## Folder Structure
 
