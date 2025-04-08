@@ -39,10 +39,13 @@ To build a machine learning model that can predict each driver's finishing posit
 - **Target Variable**: RacePosition (1 = 1st place)
 - **Metric Used**: Mean Absolute Error (MAE)
 
+```markdown
 ```text
 Final MAE on test data: ~4.92 positions
 
-## Visualizations
+
+
+### Visualizations
 
 ### Predicted vs Actual Race Positions
 
@@ -52,7 +55,7 @@ This bar chart compares each driver's predicted finishing position (from the mod
 
 ---
 
-### Feature Importance
+###  Feature Importance
 
 This chart shows which features had the most influence on the race position prediction model.
 
