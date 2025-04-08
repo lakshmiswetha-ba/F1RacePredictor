@@ -57,6 +57,7 @@ This chart highlights the most important features used by the model for predicti
 
 [View Feature Importance Chart](visuals/feature_importance.png)
 
+---
 
 ## Folder Structure
 
@@ -79,6 +80,8 @@ F1-race-predictor/
 ├── requirements.txt
 └── README.md
 
+---
+
 ## How to Run This Project
 
 ### 1. Clone the repository
@@ -88,7 +91,7 @@ git clone https://github.com/lakshmiswetha-ba/F1RacePredictor.git
 cd F1RacePredictor
 
 
-### 2. **Install required packages**
+### 2. install -r requirements.txt
 
 pip install -r requirements.txt
 
@@ -98,6 +101,8 @@ pip install -r requirements.txt
 python src/train_position_model.py
 python src/predict_position.py
 python src/plot_position_barchart.py
+
+---
 
 ## What I Learned
 
