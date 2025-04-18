@@ -90,13 +90,17 @@ F1-race-predictor/
 git clone https://github.com/lakshmiswetha-ba/F1RacePredictor.git
 cd F1RacePredictor
 
+---
 
-### 2. install -r requirements.txt
+**2. Install dependencies**  
+Make sure you have Python installed, then install all required packages using:
 
+```bash
 pip install -r requirements.txt
 
+---
 
-### 3. Run the model training and prediction scripts
+**3. Run the model training and prediction scripts
 
 python src/train_position_model.py
 python src/predict_position.py
