@@ -1,105 +1,75 @@
-# 🏎️ F1 Race Position Predictor
+# 🏎️F1 Race Position Predictor
 
-This project predicts the final race positions of Formula 1 drivers using real-world race data such as lap times, pit stops, and weather conditions. The model was trained using the 2023 Italian Grand Prix (Monza) data.
+What happens when machine learning meets motorsport? This project explores that intersection—predicting the final race positions of Formula 1 drivers using real-world race data, and a sprinkle of predictive modeling magic.
 
----
+##  Project Purpose
 
-## Project Goal
+The core aim of this project was to build a machine learning pipeline capable of predicting the **finishing position** of each driver during a Grand Prix. Rather than rely on team standings or fan biases, the model analyzes **in-race performance data** to forecast final positions with surprising accuracy.
 
-To build a machine learning model that can predict each driver's finishing position in a race based on strategic and performance-related race features.
+With F1 being a sport where strategy, milliseconds, and weather shifts make all the difference, this project tries to capture those nuances using data-driven techniques.
 
----
+##  Data Source
 
-## Tools & Libraries
+All data was collected using the **[FastF1 API](https://pypi.org/project/fastf1/)**, a Python package that provides access to official F1 telemetry, timing, and race control data. Specifically, this model was trained using detailed telemetry from the **2023 Italian Grand Prix (Monza)**.
 
-- Python
-- pandas, numpy
-- scikit-learn
-- matplotlib
-- joblib
+##  Tools & Libraries
 
----
+- **Python**
+- `pandas`, `numpy` – data manipulation
+- `scikit-learn` – model training and evaluation
+- `matplotlib` – visualizations
+- `joblib` – model serialization
 
-## Features Used
+##  Features Used
 
-- TotalLaps
-- AvgLapTime
-- NumPitStops
-- AvgPitDuration
-- SafetyCarLaps
-- PitStopEfficiency
-- LapTimeEfficiency
-- WeatherCondition
+The model leverages the following race-related features:
 
----
+- `TotalLaps`
+- `AvgLapTime`
+- `NumPitStops`
+- `AvgPitDuration`
+- `SafetyCarLaps`
+- `PitStopEfficiency`
+- `LapTimeEfficiency`
+- `WeatherCondition`
 
-## Model
+These were selected to reflect both race strategy and performance metrics.
+
+##  The Model
 
 - **Model Type**: Random Forest Regressor
-- **Target Variable**: RacePosition (1 = 1st place)
-- **Metric Used**: Mean Absolute Error (MAE)
+- **Target Variable**: `RacePosition` (1 = 1st place)
+- **Evaluation Metric**: Mean Absolute Error (MAE)
 
-**Final MAE on test data:** ~4.92 positions
+###  Result
+Final MAE on the test set: **~4.92 positions**  
+This means the model can generally predict a driver’s finishing position within ~5 spots of their actual result—a decent level of accuracy considering the unpredictable nature of F1 racing.
 
-## Visualizations
+##  Visual Insights
 
-### Predicted vs Actual Race Positions
+Two key visualizations are included:
 
-This bar chart compares predicted and actual race positions of drivers.
+- **Predicted vs Actual Race Positions** – a bar chart comparing predictions with actual results
+- **Feature Importance** – showing which features most influenced predictions
 
-[View Race Position Comparison Chart](visuals/position_barchart.png)
+These charts can be found in the `visuals/` directory.
 
----
+##  What I Learned
 
-### Feature Importance
+- Built a complete machine learning pipeline with real race telemetry
+- Cleaned and engineered features from raw F1 race data
+- Trained and evaluated a regression model using `scikit-learn`
+- Visualized results to explain model decisions
+- Wrote documentation to support reproducibility and understanding
 
-This chart highlights the most important features used by the model for predicting race positions.
+##  Project Structure
 
-[View Feature Importance Chart](visuals/feature_importance.png)
+F1-race-predictor/ ├── data/ # Processed datasets ├── models/ # Trained model artifacts ├── outputs/ # Model predictions ├── src/ # Source code (training, prediction, visualization) ├── visuals/ # Charts and visualizations ├── requirements.txt # Python dependencies └── README.md # Project overview and documentation
 
----
-
-## Folder Structure
-
-F1-race-predictor/
-├── data/
-│   └── features_with_position.csv
-├── models/
-│   └── position_model.pkl
-├── outputs/
-│   └── predicted_vs_actual.csv
-├── src/
-│   ├── merge_driver_info.py
-│   ├── merge_race_position.py
-│   ├── plot_position_barchart.py
-│   ├── predict_position.py
-│   └── train_position_model.py 
-├── visuals/
-│   ├── feature_importance.png 
-│   └── position_barchart.png
-├── requirements.txt
-└── README.md
-
----
-
-
-
-## What I Learned
-
-Built a complete ML workflow using real-world race data
-
-Practiced data cleaning, merging, and feature engineering
-
-Trained and interpreted a regression model (Random Forest)
-
-Learned to present results using clear visualizations
-
-Gained experience writing technical documentation for a real-world project
-
----
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the **MIT License**. 
 
----
+
+
