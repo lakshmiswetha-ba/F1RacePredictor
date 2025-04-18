@@ -82,31 +82,7 @@ F1-race-predictor/
 
 ---
 
-## How to Run This Project
 
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/lakshmiswetha-ba/F1RacePredictor.git
-cd F1RacePredictor
-
----
-
-**2. Install dependencies**  
-Make sure you have Python installed, then install all required packages using:
-
-```bash
-pip install -r requirements.txt
-
----
-
-**3. Run the model training and prediction scripts
-
-python src/train_position_model.py
-python src/predict_position.py
-python src/plot_position_barchart.py
-
----
 
 ## What I Learned
 
