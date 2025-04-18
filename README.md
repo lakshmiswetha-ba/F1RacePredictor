@@ -47,12 +47,15 @@ This means the model can generally predict a driver’s finishing position withi
 
 ##  Visual Insights
 
-Two key visualizations are included:
+Two key visualizations help interpret the model's performance:
 
-- **Predicted vs Actual Race Positions** – a bar chart comparing predictions with actual results
-- **Feature Importance** – showing which features most influenced predictions
+- **[Predicted vs Actual Race Positions](./visuals/position_barchart.png)** – A bar chart comparing model predictions to the real finishing positions.
+- **[Feature Importance](./visuals/feature_importance.png)** – Highlights which features had the biggest influence on the model's predictions.
 
-These charts can be found in the `visuals/` directory.
+You can also explore the raw output in CSV format:
+
+- **[Predicted vs Actual Data (CSV)](./outputs/predicted_vs_actual.csv)** – Tabular results showing each driver’s actual and predicted finishing positions.
+
 
 ##  What I Learned
 
